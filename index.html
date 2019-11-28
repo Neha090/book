@@ -13,11 +13,13 @@ $(document).ready(function(){
  
        var res=$("#txt").val();
 	   $.ajax({url:"https://www.googleapis.com/books/v1/volumes?q="+res, success: function(data){
-	    
+	       var count=0;
 		for(x in data.items)
 		{
-		   document.getElementById("demo").innerHTML+=data.items[x].volumeInfo.title;
+		   document.getElementById("demo").innerHTML+=data.items[x].volumeInfo.title+"<br>";
+			count++;
 		}
+		   alert(count);
 		}
 		
 	});
